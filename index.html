@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">devXfasi-<span>potfolio</span></div>
+    <div class="navlinks">
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-primary">Hire me</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-primary">Hire me</a>
+  </div>
+</header>
+
+<main class="wrap hero">
+  <div>
+    <div class="kicker">Web Developer</div>
+    <h1>I build websites that feel <em>fast</em>, look sharp, and just work.</h1>
+    <p class="lead">Frontend and backend development for businesses, startups, and personal brands — clean code, responsive layouts, and interfaces people actually enjoy using.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View projects</a>
+      <a href="#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">30+</div><div class="stat-label">Projects delivered</div></div>
+      <div><div class="stat-num">4+</div><div class="stat-label">Years building</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">On-time delivery</div></div>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <div class="tag-row">
+      <span class="code-tag">HTML5</span>
+      <span class="code-tag">CSS3</span>
+      <span class="code-tag">JavaScript</span>
+      <span class="code-tag">React</span>
+      <span class="code-tag">Node.js</span>
+      <span class="code-tag">WordPress</span>
+    </div>
+    <h3>Full-stack, front to back</h3>
+    <p>From pixel-perfect landing pages to full web applications with working databases and APIs.</p>
+  </div>
+</main>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Skills</h2>
+        <p>The tools and languages I use to turn a design or an idea into a working website.</p>
+      </div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Frontend</h3>
+        <ul class="skill-list">
+          <li>HTML5 &amp; CSS3</li>
+          <li>JavaScript (ES6+)</li>
+          <li>React.js</li>
+          <li>Tailwind CSS / Bootstrap</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Backend</h3>
+        <ul class="skill-list">
+          <li>Node.js &amp; Express</li>
+          <li>PHP</li>
+          <li>REST API design</li>
+          <li>Authentication &amp; sessions</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Database</h3>
+        <ul class="skill-list">
+          <li>MySQL</li>
+          <li>MongoDB</li>
+          <li>Firebase</li>
+          <li>Data modelling</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>CMS &amp; Tools</h3>
+        <ul class="skill-list">
+          <li>WordPress &amp; WooCommerce</li>
+          <li>Git &amp; GitHub</li>
+          <li>Figma to code</li>
+          <li>Performance &amp; SEO basics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Projects</h2>
+        <p>Real websites I have built, with a demo video, live link and source code for each.</p>
+      </div>
+      <button class="btn btn-ghost" onclick="openModal()">+ Add project</button>
+    </div>
+    <div class="projects-grid" id="projectsGrid"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Let's build something together</h2>
+      <p>Available for freelance web development projects — new websites, redesigns, or fixing up something that's already live.</p>
+      <div class="contact-actions">
+        <a href="#" class="btn btn-primary">Message me on Fiverr</a>
+        <a href="#" class="btn btn-outline">Send an email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div>© <span id="year"></span> devfolio — Web Development Portfolio</div>
+  <div>Built with HTML, CSS &amp; JavaScript</div>
+</footer>
+
+<!-- Add Project Modal -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <h3>Add a project</h3>
+    <div class="field">
+      <label for="pName">Project name</label>
+      <input id="pName" type="text" placeholder="e.g. Restaurant Booking Website">
+    </div>
+    <div class="field">
+      <label for="pTags">Tech used (comma separated)</label>
+      <input id="pTags" type="text" placeholder="e.g. React, Node.js, MongoDB">
+    </div>
+    <div class="field">
+      <label for="pDesc">Short description</label>
+      <textarea id="pDesc" placeholder="What does this project do?"></textarea>
+    </div>
+    <div class="field">
+      <label for="pLink">Live / Vercel link (optional)</label>
+      <input id="pLink" type="text" placeholder="https://...">
+    </div>
+    <div class="field">
+      <label for="pGithub">GitHub link (optional)</label>
+      <input id="pGithub" type="text" placeholder="https://github.com/username/repo">
+    </div>
+    <div class="field">
+      <label for="pVideo">Video path or link (optional)</label>
+      <input id="pVideo" type="text" placeholder="videos/myproject.mp4">
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveProject()">Save project</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
